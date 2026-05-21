@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Dokumen BAVO - COP - MPR</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f4f7fb;
+      color:#333;
+    }
+
+    .header{
+      background:#0b3d91;
+      color:white;
+      padding:20px;
+      text-align:center;
+      font-size:28px;
+      font-weight:bold;
+      box-shadow:0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .container{
+      width:95%;
+      margin:auto;
+      margin-top:30px;
+    }
+
+    .card{
+      background:white;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom:25px;
+    }
+
+    .card h2{
+      margin-bottom:20px;
+      color:#0b3d91;
+    }
+
+    .form-group{
+      margin-bottom:15px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:5px;
+      font-weight:bold;
+    }
+
+    input, select, textarea{
+      width:100%;
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:8px;
+    }
+
+    textarea{
+      resize:vertical;
+    }
+
+    .btn{
+      background:#0b3d91;
+      color:white;
+      padding:12px 20px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#072c69;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:20px;
+    }
+
+    table th{
+      background:#0b3d91;
+      color:white;
+      padding:12px;
+    }
+
+    table td{
+      padding:10px;
+      border-bottom:1px solid #ddd;
+      text-align:center;
+    }
+
+    .status-approved{
+      color:green;
+      font-weight:bold;
+    }
+
+    .status-pending{
+      color:orange;
+      font-weight:bold;
+    }
+
+    .footer{
+      text-align:center;
+      padding:20px;
+      margin-top:40px;
+      color:#666;
+    }
+
+    .info{
+      background:#eef4ff;
+      border-left:5px solid #0b3d91;
+      padding:15px;
+      margin-bottom:20px;
+      border-radius:8px;
+    }
+
+  </style>
+<style>
+
+.header{
+  background:#0b3d91;
+  color:white;
+  padding:20px;
+  text-align:center;
+  position:relative;
+  font-size:28px;
+  font-weight:bold;
+  box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-right{
+  position:absolute;
+  top:12px;
+  right:20px;
+}
+
+.header-right img{
+  height:30px;
+  width:auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+  DATABASE DOKUMEN BAVO - COP - MPR
+
+  <div class="header-right">
+    <img src="logo-moya.png" alt="Logo Moya">
+  </div>
+
+</div>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>📁 Upload Dokumen</h2>
+
+      <div class="info">
+        <b>Catatan:</b><br>
+        File dokumen akan disimpan di Google Drive / Shared Drive perusahaan.
+      </div>
+
+      <form>
+
+        <div class="form-group">
+          <label>Jenis Dokumen</label>
+          <select>
+            <option>BAVO</option>
+            <option>COP</option>
+            <option>MPR</option>
+          </select>
+        </div>
+
+<div class="form-group">
+          <label>OpCO</label>
+  <select>
+            <option>AAT</option>
+            <option>ABT</option>
+            <option>MT</option>
+	    <option>MBJ</option>
+	    <option>TKCM</option>
+	    <option>TTC</option>
+	    <option>ABHi</option>
+	    <option>ABHu</option>
+	    <option>ASB</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Nomor PO</label>
+          <input type="text" placeholder="Contoh: BAVO/2026/001">
+        </div>
+
+        <div class="form-group">
+          <label>Nama Project</label>
+          <input type="text" placeholder="Masukkan Nama Project">
+        </div>
+
+        <div class="form-group">
+          <label>Vendor</label>
+          <input type="text" placeholder="Masukkan Nama Vendor">
+        </div>
+
+            <div class="form-group">
+          <label>Status Approval</label>
+          <select>
+            <option>On Process</option>
+            <option>Approved</option>
+            <option>Revised</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Keterangan</label>
+          <textarea rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="form-group">
+
+  <label>Upload Dokumen</label>
+
+  <input 
+    type="file"
+    multiple
+    accept=".pdf,.xls,.xlsx,.doc,.docx,.jpg,.png"
+  >
+
+  <small>
+    Bisa upload multiple file PDF, Excel, Word, JPG, PNG
+  </small>
+
+</div>
+        </div>
+
+        <button class="btn">SIMPAN DOKUMEN</button>
+
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>📊 Database Dokumen</h2>
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Jenis</th>
+            <th>Nomor Dokumen</th>
+            <th>Project</th>
+            <th>Vendor</th>
+            <th>Status</th>
+            <th>File</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>1</td>
+            <td>BAVO</td>
+            <td>BAVO/2026/001</td>
+            <td>Reservoir Project</td>
+            <td>PT ABC</td>
+            <td class="status-approved">Approved</td>
+            <td>
+              <a href="#">View File</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>COP</td>
+            <td>COP/2026/002</td>
+            <td>Piping Project</td>
+            <td>PT XYZ</td>
+            <td class="status-pending">Pending</td>
+            <td>
+              <a href="#">View File</a>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  <div class="footer">
+    © 2026 Database Dokumen Project Valuation System
+  </div>
+
+</body>
+</html>
