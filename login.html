@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Login Database Dokumen</title>
+
+  <style>
+.logo{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.logo img{
+  width:140px;
+  height:auto;
+}
+
+    body{
+      font-family:Arial;
+      background:#f4f7fb;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+
+    .login-box{
+      background:white;
+      padding:40px;
+      border-radius:10px;
+      width:350px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2{
+      text-align:center;
+      color:#0b3d91;
+    }
+
+    input{
+      width:100%;
+      padding:12px;
+      margin-top:10px;
+      margin-bottom:20px;
+      border:1px solid #ccc;
+      border-radius:8px;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      background:#0b3d91;
+      color:white;
+      border:none;
+      border-radius:8px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#072c69;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="login-box">
+
+  <div class="logo">
+    <img src="logo-moya.png" alt="Logo Moya">
+  </div>
+
+    <h2>LOGIN SYSTEM</h2>
+
+    <input type="text" id="username" placeholder="Username">
+
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="login()">LOGIN</button>
+
+  </div>
+
+  <script>
+
+    function login(){
+
+      var user = document.getElementById("username").value;
+      var pass = document.getElementById("password").value;
+
+      if(user == "admin" && pass == "moya123"){
+
+        window.location.href = "index.html";
+
+      }else{
+
+        alert("Username atau Password Salah!");
+
+      }
+
+    }
+
+  </script>
+
+<script>
+
+function logout(){
+
+  sessionStorage.removeItem("login");
+
+  window.location.href = "index.html";
+
+}
+
+</script>
+</body>
+</html>
